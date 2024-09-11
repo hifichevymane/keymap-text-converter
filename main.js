@@ -1,4 +1,5 @@
 import prompts from "prompts";
+import chalk from "chalk";
 
 import { EN_KEYMAP, UA_KEYMAP } from "./keymaps.js";
 
@@ -48,7 +49,7 @@ const main = async () => {
   const { inputText, keymap } = await prompts(questions);
 
   const convertedText = convertTextKeymap(inputText, keymap);
-  console.log(`The converted string: ${convertedText}`);
+  console.log(chalk.green(`The converted string: ${convertedText}`));
 };
 
 main();
